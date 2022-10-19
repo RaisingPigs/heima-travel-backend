@@ -1,0 +1,27 @@
+server:
+  port: 9999
+  servlet:
+    context-path: /es-study/api
+
+spring:
+  application:
+    name: es-study
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.79.130:3306/mytest
+    username: root
+    password: root
+    type: com.alibaba.druid.pool.DruidDataSource
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+mybatis-plus:
+  mapper-locations: classpath:mapper/*Mapper.xml
+  configuration:
+    map-underscore-to-camel-case: false
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
